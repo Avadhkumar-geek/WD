@@ -9,6 +9,20 @@
                 background-image: url("imgs/login4.webp");
             }
         </style>
+        <script type="text/javascript">
+            function validate() {
+                let email = document.forms["myForm"]["Email"].value;
+                let Passwd = document.forms["myForm"]["passwd"].value;
+                if (email == "") {
+                    alert("Email can not be empty");
+                    return false;
+                }
+                if (Passwd == "") {
+                    alert("Password can not be empty");
+                    return false;
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -20,9 +34,9 @@
 
         <div class="input">
             <h2>Login</h2>
-            <form class="ele" action="">
-                <input type="email" name="" id="email" placeholder="Email id" />
-                <input type="text" name="" id="" placeholder="Password" />
+            <form class="ele" name="myForm" onsubmit="returnvalidate()" method="post" required>
+                <input type="email" name="Email" placeholder="Email id" required />
+                <input type="password" name="passwd" placeholder="Password" />
                 <button type="submit"><span>login</span></button>
             </form>
         </div>
